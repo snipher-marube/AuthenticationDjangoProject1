@@ -20,8 +20,9 @@ from django.conf import settings
 # reset password generators
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 
-from .forms import SignUpForm, PasswordResetForm
+from .forms import SignUpForm, PasswordResetForm, ProfileForm, UserForm
 from .utils import account_activation_token
+from .models import Profile
 
 #Email thread
 import threading
@@ -172,7 +173,28 @@ def password_reset_confirm(request, uidb64, token):
 
 
 def profile(request):
-    return render(request, 'authapp/profile.html')
+    profile = request.user.profile
+    context = {'profile': profile}
+    return render(request, 'authapp/profile.html', context)
+
+def edit_profile(request):
+    user = request.user
+    profile = user.profile
+    form = ProfileForm(instance=profile)
+    if request.method == 'POST':
+        user_form = UserForm(request.POST, instance=request.user)
+        if user_form.is_valid():
+            user_form.save()
+
+
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Profile updated successfully')
+            return redirect('profile')
+    context = {'form': form}
+
+    return render(request, 'authapp/edit_profile.html', context)
 
 
 

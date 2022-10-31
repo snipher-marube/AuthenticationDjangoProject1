@@ -10,18 +10,20 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Login</a>
-                </li>
+
 
                 {% if request.user.is_authenticated %}
-                    <a href="{% url 'logout' %}">
-                        <button class="btn btn-outline-danger" type="submit">logout</button>
-                    </a>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'profile' %}">Account</a>
                     </li>
+                    <a href="{% url 'logout' %}">
+                        <button class="btn btn-outline-danger" type="submit">logout</button>
+                    </a>
+
                 {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
                     <a href="{% url 'signup' %}">
                         <button class="btn btn-outline-danger" type="submit">SignUp</button>
                     </a>
@@ -29,6 +31,7 @@
 
 
             </ul>
+
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
