@@ -1,7 +1,7 @@
 
 
 # 100% Django Authentication App
-<img src="https://github.com/snipher-marube/AuthenticationDjangoProject1/blob/master/static/media/gitLogo.png">
+<img src="https://github.com/snipher-marube/AuthenticationDjangoProject1/blob/master/static/media/gitLogo.png" center>
 
 This project is aimed at creation of full flex django Authentication with all features for the user to create account and activate it
 
