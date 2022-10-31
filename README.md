@@ -33,7 +33,7 @@ Install AuthenticationDjangoProject1 with git
 ```bash
   git clone https://github.com/snipher-marube/AuthenticationDjangoProject1.git
   cd AuthenticationDjangoProject1
-  pip -r install requirements.txt
+  pip install -r requirements.txt
   python manage.py runserver
 ```
     
