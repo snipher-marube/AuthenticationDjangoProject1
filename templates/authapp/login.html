@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Launch Login Page
+    </button>
+
+    {% include 'includes/messages.html' %}
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <label>Email</label>
+                        <input class="form-control" type="text" name="username">
+                        <br>
+                        <label>Password</label>
+                        <input class="form-control" type="password" name="password1">
+                        <br>
+
+                        <div class="modal-footer">
+
+                            <button type="submit" class="btn btn-primary">SignUp</button>
+                        </div>
+                        <p>Forgot password? <a href="{% url 'password_reset' %}">reset</a> </p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

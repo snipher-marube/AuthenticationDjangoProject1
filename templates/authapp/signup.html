@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Launch Sign Up Page
+    </button>
+    {% include 'includes/messages.html' %}
+
+    <!-- Modal -->
+    <div class="modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Sign Up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="{% url 'signup' %}">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+
+                        <div class="modal-footer">
+
+                            <button type="submit" class="btn btn-primary">SignUp</button>
+                        </div>
+                        <p>Already have an account? <a href="{% url 'login' %}">login</a> </p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
