@@ -27,7 +27,7 @@ I'm a full stack developer...
 
 ## Installation
 
-Install my-project with npm
+Install my-project with git
 
 ```bash
   git clone https://github.com/snipher-marube/AuthenticationDjangoProject1.git
