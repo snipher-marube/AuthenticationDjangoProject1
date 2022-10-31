@@ -1,6 +1,7 @@
 
 
 # 100% Django Authentication App
+<img src="https://github.com/snipher-marube/AuthenticationDjangoProject1/blob/master/static/media/gitLogo.png" center>
 
 This project is aimed at creation of full flex django Authentication with all features for the user to create account and activate it
 
@@ -27,12 +28,12 @@ I'm a full stack developer...
 
 ## Installation
 
-Install my-project with git
+Install AuthenticationDjangoProject1 with git
 
 ```bash
   git clone https://github.com/snipher-marube/AuthenticationDjangoProject1.git
-  cd my-project
-  pip -r install requirements.txt
+  cd AuthenticationDjangoProject1
+  pip install -r requirements.txt
   python manage.py runserver
 ```
     
