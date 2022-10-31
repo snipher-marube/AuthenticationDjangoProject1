@@ -28,11 +28,11 @@ I'm a full stack developer...
 
 ## Installation
 
-Install my-project with git
+Install AuthenticationDjangoProject1 with git
 
 ```bash
   git clone https://github.com/snipher-marube/AuthenticationDjangoProject1.git
-  cd my-project
+  cd AuthenticationDjangoProject1
   pip -r install requirements.txt
   python manage.py runserver
 ```
